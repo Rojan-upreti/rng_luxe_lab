@@ -299,6 +299,36 @@ body {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
+/* Coming Soon Badge */
+.coming-soon-badge {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.coming-soon-badge span {
+    background: linear-gradient(135deg, #007AFF 0%, #34C759 100%);
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0, 122, 255, 0.3);
+    animation: badgePulse 2s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(0, 122, 255, 0.3);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(0, 122, 255, 0.4);
+    }
+}
+
 /* Hero Scroll Indicator */
 .hero .scroll-indicator {
     display: flex;
