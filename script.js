@@ -26,6 +26,85 @@ if (hamburger && navMenu) {
     });
 }
 
+// Enhanced Dropdown Navigation
+function initializeDropdowns() {
+    const dropdowns = document.querySelectorAll('.dropdown');
+    
+    dropdowns.forEach(dropdown => {
+        const trigger = dropdown.querySelector('.nav-link');
+        const content = dropdown.querySelector('.dropdown-content');
+        let isOpen = false;
+        let hoverTimeout;
+        
+        // Click to toggle
+        trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Close other dropdowns
+            dropdowns.forEach(otherDropdown => {
+                if (otherDropdown !== dropdown) {
+                    otherDropdown.classList.remove('active');
+                    otherDropdown.querySelector('.dropdown-content').style.display = 'none';
+                }
+            });
+            
+            // Toggle current dropdown
+            isOpen = !isOpen;
+            if (isOpen) {
+                dropdown.classList.add('active');
+                content.style.display = 'block';
+                content.style.opacity = '1';
+                content.style.transform = 'translateY(0)';
+                content.style.pointerEvents = 'auto';
+            } else {
+                dropdown.classList.remove('active');
+                content.style.display = 'none';
+                content.style.opacity = '0';
+                content.style.transform = 'translateY(-10px)';
+                content.style.pointerEvents = 'none';
+            }
+        });
+        
+        // Simple hover to show, but don't keep it open
+        dropdown.addEventListener('mouseenter', () => {
+            clearTimeout(hoverTimeout);
+            content.style.display = 'block';
+            content.style.opacity = '1';
+            content.style.transform = 'translateY(0)';
+            content.style.pointerEvents = 'auto';
+        });
+        
+        dropdown.addEventListener('mouseleave', () => {
+            if (!dropdown.classList.contains('active')) {
+                hoverTimeout = setTimeout(() => {
+                    content.style.display = 'none';
+                    content.style.opacity = '0';
+                    content.style.transform = 'translateY(-10px)';
+                    content.style.pointerEvents = 'none';
+                }, 100);
+            }
+        });
+    });
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.dropdown')) {
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove('active');
+                const content = dropdown.querySelector('.dropdown-content');
+                content.style.display = 'none';
+                content.style.opacity = '0';
+                content.style.transform = 'translateY(-10px)';
+                content.style.pointerEvents = 'none';
+            });
+        }
+    });
+}
+
+// Initialize dropdowns when DOM is loaded
+document.addEventListener('DOMContentLoaded', initializeDropdowns);
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -361,50 +440,82 @@ function initializeMacInterface() {
     const maximizeBtn = document.querySelector('.control-btn.maximize');
     const macWindow = document.querySelector('.mac-window');
     
+    // Store original styles for restoration
+    let originalStyles = {};
+    let isMaximized = false;
+    let isMinimized = false;
+    
+    if (macWindow) {
+        // Store original styles
+        originalStyles = {
+            width: macWindow.style.width || '1200px',
+            height: macWindow.style.height || 'auto',
+            position: macWindow.style.position || 'relative',
+            top: macWindow.style.top || 'auto',
+            left: macWindow.style.left || 'auto',
+            transform: macWindow.style.transform || 'scale(1)',
+            opacity: macWindow.style.opacity || '1',
+            overflow: macWindow.style.overflow || 'visible'
+        };
+    }
+    
     if (closeBtn && macWindow) {
         closeBtn.addEventListener('click', () => {
-            macWindow.style.transform = 'scale(0.8)';
-            macWindow.style.opacity = '0';
-            setTimeout(() => {
-                macWindow.style.display = 'none';
-                showMacNotification('RNG Luxe ATS has been closed');
-            }, 300);
+            // Close button does nothing - just show notification
+            showMacNotification('Close button disabled - use minimize instead');
         });
     }
     
     if (minimizeBtn && macWindow) {
         minimizeBtn.addEventListener('click', () => {
-            macWindow.style.transform = 'scale(0.9) translateY(50px)';
-            macWindow.style.opacity = '0.5';
-            setTimeout(() => {
-                macWindow.style.transform = 'scale(1) translateY(0)';
-                macWindow.style.opacity = '1';
-                showMacNotification('RNG Luxe ATS minimized');
-            }, 300);
+            if (isMaximized) {
+                // Only minimize when maximized - restore to normal size
+                macWindow.style.width = originalStyles.width;
+                macWindow.style.height = originalStyles.height;
+                macWindow.style.position = originalStyles.position;
+                macWindow.style.top = originalStyles.top;
+                macWindow.style.left = originalStyles.left;
+                macWindow.style.transform = originalStyles.transform;
+                macWindow.style.opacity = originalStyles.opacity;
+                macWindow.style.overflow = originalStyles.overflow;
+                macWindow.style.zIndex = 'auto';
+                isMaximized = false;
+                showMacNotification('RNG Luxe ATS restored from fullscreen');
+            } else {
+                // Minimize button does nothing when not maximized
+                showMacNotification('Minimize only works when maximized');
+            }
         });
     }
     
     if (maximizeBtn && macWindow) {
-        let isMaximized = false;
         maximizeBtn.addEventListener('click', () => {
-            if (!isMaximized) {
-                macWindow.style.width = '100vw';
-                macWindow.style.height = '100vh';
-                macWindow.style.position = 'fixed';
-                macWindow.style.top = '0';
-                macWindow.style.left = '0';
-                macWindow.style.transform = 'scale(1)';
-                isMaximized = true;
-                showMacNotification('RNG Luxe ATS maximized');
-            } else {
-                macWindow.style.width = '1200px';
-                macWindow.style.height = 'auto';
-                macWindow.style.position = 'relative';
-                macWindow.style.top = 'auto';
-                macWindow.style.left = 'auto';
-                macWindow.style.transform = 'scale(1)';
+            if (isMaximized) {
+                // Exit fullscreen
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                } else if (document.mozCancelFullScreen) {
+                    document.mozCancelFullScreen();
+                } else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                }
                 isMaximized = false;
                 showMacNotification('RNG Luxe ATS restored');
+            } else {
+                // Enter true fullscreen like F11
+                if (macWindow.requestFullscreen) {
+                    macWindow.requestFullscreen();
+                } else if (macWindow.webkitRequestFullscreen) {
+                    macWindow.webkitRequestFullscreen();
+                } else if (macWindow.mozRequestFullScreen) {
+                    macWindow.mozRequestFullScreen();
+                } else if (macWindow.msRequestFullscreen) {
+                    macWindow.msRequestFullscreen();
+                }
+                isMaximized = true;
+                showMacNotification('RNG Luxe ATS maximized to fullscreen');
             }
         });
     }
@@ -423,6 +534,17 @@ function initializeMacInterface() {
             updateMainContent(navText);
         });
     });
+    
+    // Set Candidates as default active section
+    const candidatesNav = document.querySelector('.nav-item[data-section="candidates"]');
+    if (candidatesNav) {
+        // Remove active from all items first
+        navItems.forEach(nav => nav.classList.remove('active'));
+        // Set candidates as active
+        candidatesNav.classList.add('active');
+        // Load candidates content by default
+        updateCandidatesContent();
+    }
     
     // Mac Cards Interactive
     const macCards = document.querySelectorAll('.mac-card');
