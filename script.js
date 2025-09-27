@@ -152,21 +152,6 @@ document.head.appendChild(faqStyle);
 
 // Form validation and submission
 document.addEventListener('DOMContentLoaded', () => {
-    // Email input functionality
-    const emailInput = document.querySelector('.email-input');
-    if (emailInput) {
-        emailInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                if (this.value.includes('@')) {
-                    showNotification('Download link sent to your email!', 'success');
-                    this.value = '';
-                } else {
-                    showNotification('Please enter a valid email address', 'error');
-                }
-            }
-        });
-    }
 
     // Add click handlers for demo buttons
     document.querySelectorAll('.btn-primary, .btn-secondary, .get-windows-btn').forEach(button => {
