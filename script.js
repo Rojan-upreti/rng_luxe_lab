@@ -170,12 +170,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add click handlers for demo buttons
     document.querySelectorAll('.btn-primary, .btn-secondary, .get-windows-btn').forEach(button => {
         button.addEventListener('click', function(e) {
+            // Don't prevent default for links (Our Team)
+            if (this.tagName === 'A') {
+                return; // Let the link navigate naturally
+            }
+            
             e.preventDefault();
             
             if (this.textContent.includes('Join Waitlist')) {
                 showNotification('🎉 You\'re on the waitlist! We\'ll notify you when RNG Luxe is ready.', 'success');
-            } else if (this.textContent.includes('View Demo')) {
-                showNotification('Demo video will be available soon! Stay tuned.', 'info');
             } else if (this.textContent.includes('Get for') || this.textContent.includes('Download')) {
                 showNotification('Download started! Check your downloads folder.', 'success');
             } else if (this.textContent.includes('Started for Free')) {
