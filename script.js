@@ -464,62 +464,18 @@ function initializeMacInterface() {
         });
     });
     
-    // Hide hand gesture overlay after user interaction
-    const handGestureOverlay = document.querySelector('.hand-gesture-overlay');
-    const scrollIndicator = document.querySelector('.scroll-indicator');
-    const macMainContent = document.querySelector('.mac-main-content');
-    
-    if (handGestureOverlay && scrollIndicator && macMainContent) {
-        // Hide overlay after scroll
-        macMainContent.addEventListener('scroll', () => {
-            if (handGestureOverlay.style.display !== 'none') {
-                handGestureOverlay.style.opacity = '0';
-                handGestureOverlay.style.transition = 'opacity 0.5s ease';
-                setTimeout(() => {
-                    handGestureOverlay.style.display = 'none';
-                }, 500);
-            }
-            
-            if (scrollIndicator.style.display !== 'none') {
-                scrollIndicator.style.opacity = '0';
-                scrollIndicator.style.transition = 'opacity 0.5s ease';
-                setTimeout(() => {
-                    scrollIndicator.style.display = 'none';
-                }, 500);
-            }
-        });
-        
-        // Hide overlay after any click
-        document.addEventListener('click', () => {
-            if (handGestureOverlay.style.display !== 'none') {
-                handGestureOverlay.style.opacity = '0';
-                handGestureOverlay.style.transition = 'opacity 0.5s ease';
-                setTimeout(() => {
-                    handGestureOverlay.style.display = 'none';
-                }, 500);
-            }
-            
-            if (scrollIndicator.style.display !== 'none') {
-                scrollIndicator.style.opacity = '0';
-                scrollIndicator.style.transition = 'opacity 0.5s ease';
-                setTimeout(() => {
-                    scrollIndicator.style.display = 'none';
-                }, 500);
-            }
-        });
-    }
 }
 
 // Update Main Content Function
 function updateMainContent(section) {
     const contentHeader = document.querySelector('.content-header h2');
-    const cardsGrid = document.querySelector('.mac-cards-grid');
+    const mainContent = document.querySelector('.mac-main-content');
     
-    if (!contentHeader) return;
+    if (!contentHeader || !mainContent) return;
     
     switch(section) {
         case 'Dashboard':
-            contentHeader.textContent = 'Live Assessment Monitor';
+            contentHeader.textContent = 'Dashboard Overview';
             updateDashboardContent();
             break;
         case 'Candidates':
@@ -1160,31 +1116,92 @@ function updateSettingsContent() {
                         <option>High Security</option>
                     </select>
                 </div>
+                <div class="setting-item">
+                    <label>Screen Recording</label>
+                    <input type="checkbox" checked>
+                    <span>Enable screen recording during assessments</span>
+                </div>
             </div>
             
             <div class="settings-section">
                 <h3>AI Configuration</h3>
                 <div class="setting-item">
-                    <label>AI Match Threshold</label>
-                    <input type="range" min="70" max="95" value="80">
-                    <span>80%</span>
+                    <label>AI Match Threshold: <span id="thresholdValue">80%</span></label>
+                    <input type="range" id="thresholdSlider" min="70" max="95" value="80">
                 </div>
                 <div class="setting-item">
                     <label>Auto-screening</label>
                     <input type="checkbox" checked>
+                    <span>Automatically screen candidates with AI</span>
+                </div>
+                <div class="setting-item">
+                    <label>Facial Recognition</label>
+                    <input type="checkbox" checked>
+                    <span>Enable facial recognition for identity verification</span>
+                </div>
+            </div>
+            
+            <div class="settings-section">
+                <h3>Notification Settings</h3>
+                <div class="setting-item">
+                    <label>Email Notifications</label>
+                    <input type="checkbox" checked>
+                    <span>Receive email alerts for new applications</span>
+                </div>
+                <div class="setting-item">
+                    <label>Assessment Reminders</label>
+                    <input type="checkbox" checked>
+                    <span>Send reminders to candidates</span>
+                </div>
+            </div>
+            
+            <div class="settings-section">
+                <h3>Security Settings</h3>
+                <div class="setting-item">
+                    <label>Two-Factor Authentication</label>
+                    <input type="checkbox" checked>
+                    <span>Require 2FA for admin access</span>
+                </div>
+                <div class="setting-item">
+                    <label>Session Timeout</label>
+                    <select>
+                        <option>15 minutes</option>
+                        <option selected>30 minutes</option>
+                        <option>60 minutes</option>
+                    </select>
                 </div>
             </div>
         </div>
         
         <div class="mac-controls">
-            <button class="mac-btn primary">
+            <button class="mac-btn primary" onclick="saveSettings()">
                 <div class="btn-icon settings"></div>
                 Save Settings
             </button>
-            <button class="mac-btn secondary">
+            <button class="mac-btn secondary" onclick="resetSettings()">
                 <div class="btn-icon monitor"></div>
                 Reset to Default
             </button>
         </div>
     `;
+    
+    // Add event listener for threshold slider
+    const thresholdSlider = document.getElementById('thresholdSlider');
+    const thresholdValue = document.getElementById('thresholdValue');
+    if (thresholdSlider && thresholdValue) {
+        thresholdSlider.addEventListener('input', function() {
+            thresholdValue.textContent = this.value + '%';
+        });
+    }
+}
+
+// Settings Functions
+function saveSettings() {
+    showMacNotification('Settings saved successfully!');
+}
+
+function resetSettings() {
+    if (confirm('Are you sure you want to reset all settings to default?')) {
+        showMacNotification('Settings reset to default values.');
+    }
 }
