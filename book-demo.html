@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book A Demo - RNG Luxe</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>RNG Luxe</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <div class="dropdown">
+                    <a href="use-cases.html" class="nav-link">Use Cases</a>
+                    <div class="dropdown-content">
+                        <a href="use-cases.html#technical">Technical Hiring</a>
+                        <a href="use-cases.html#sales">Sales Recruitment</a>
+                        <a href="use-cases.html#remote">Remote Assessments</a>
+                        <a href="use-cases.html#bulk">Bulk Screening</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="enterprise.html" class="nav-link">Enterprise</a>
+                    <div class="dropdown-content">
+                        <a href="enterprise.html#guides">Enterprise Guides</a>
+                        <a href="enterprise.html#security">Security</a>
+                        <a href="enterprise.html#vendor">Vendor Profile</a>
+                    </div>
+                </div>
+                <a href="book-demo.html" class="nav-link">Book A Demo</a>
+                <div class="dropdown">
+                    <a href="resources.html" class="nav-link">Resources</a>
+                    <div class="dropdown-content">
+                        <a href="resources.html#manifesto">Manifesto</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="support.html" class="nav-link">Support</a>
+                    <div class="dropdown-content">
+                        <a href="support.html#help">Help Center</a>
+                        <a href="support.html#contact">Contact Us</a>
+                    </div>
+                </div>
+                <a href="#" class="nav-link cta-button">Get Started for Free</a>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Book A Demo</h1>
+            <p>See RNG Luxe in action with a personalized demonstration tailored to your hiring needs</p>
+        </div>
+    </section>
+
+    <!-- Demo Form -->
+    <section class="demo-section">
+        <div class="container">
+            <div class="demo-content">
+                <div class="demo-info">
+                    <h2>Schedule Your Personalized Demo</h2>
+                    <p>Get a 30-minute personalized demonstration of RNG Luxe's capabilities, tailored to your specific hiring challenges and requirements.</p>
+                    
+                    <div class="demo-features">
+                        <div class="demo-feature">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div>
+                                <h3>Flexible Scheduling</h3>
+                                <p>Choose a time that works best for your team</p>
+                            </div>
+                        </div>
+                        <div class="demo-feature">
+                            <i class="fas fa-user-tie"></i>
+                            <div>
+                                <h3>Expert Guidance</h3>
+                                <p>Get insights from our hiring technology specialists</p>
+                            </div>
+                        </div>
+                        <div class="demo-feature">
+                            <i class="fas fa-cogs"></i>
+                            <div>
+                                <h3>Customized Demo</h3>
+                                <p>See features relevant to your industry and use case</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="demo-form-container">
+                    <form class="demo-form" id="demoForm">
+                        <h3>Book Your Demo</h3>
+                        
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Work Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Company *</label>
+                            <input type="text" id="company" name="company" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="jobTitle">Job Title *</label>
+                            <input type="text" id="jobTitle" name="jobTitle" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="companySize">Company Size *</label>
+                            <select id="companySize" name="companySize" required>
+                                <option value="">Select company size</option>
+                                <option value="1-10">1-10 employees</option>
+                                <option value="11-50">11-50 employees</option>
+                                <option value="51-200">51-200 employees</option>
+                                <option value="201-500">201-500 employees</option>
+                                <option value="501-1000">501-1000 employees</option>
+                                <option value="1000+">1000+ employees</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="useCase">Primary Use Case *</label>
+                            <select id="useCase" name="useCase" required>
+                                <option value="">Select primary use case</option>
+                                <option value="technical">Technical Hiring</option>
+                                <option value="sales">Sales Recruitment</option>
+                                <option value="remote">Remote Assessments</option>
+                                <option value="bulk">Bulk Screening</option>
+                                <option value="enterprise">Enterprise Solution</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="preferredDate">Preferred Date *</label>
+                            <input type="date" id="preferredDate" name="preferredDate" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="preferredTime">Preferred Time *</label>
+                            <select id="preferredTime" name="preferredTime" required>
+                                <option value="">Select time</option>
+                                <option value="9:00 AM">9:00 AM</option>
+                                <option value="10:00 AM">10:00 AM</option>
+                                <option value="11:00 AM">11:00 AM</option>
+                                <option value="12:00 PM">12:00 PM</option>
+                                <option value="1:00 PM">1:00 PM</option>
+                                <option value="2:00 PM">2:00 PM</option>
+                                <option value="3:00 PM">3:00 PM</option>
+                                <option value="4:00 PM">4:00 PM</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="timezone">Timezone *</label>
+                            <select id="timezone" name="timezone" required>
+                                <option value="">Select timezone</option>
+                                <option value="PST">Pacific Time (PST)</option>
+                                <option value="MST">Mountain Time (MST)</option>
+                                <option value="CST">Central Time (CST)</option>
+                                <option value="EST">Eastern Time (EST)</option>
+                                <option value="GMT">Greenwich Mean Time (GMT)</option>
+                                <option value="CET">Central European Time (CET)</option>
+                                <option value="IST">Indian Standard Time (IST)</option>
+                                <option value="JST">Japan Standard Time (JST)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Additional Information</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Tell us about your specific hiring challenges or questions..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary">Schedule Demo</button>
+                        
+                        <p class="form-note">
+                            <i class="fas fa-shield-alt"></i>
+                            Your information is secure and will only be used to schedule your demo.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Benefits -->
+    <section class="demo-benefits">
+        <div class="container">
+            <h2>What You'll See in Your Demo</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-eye"></i>
+                    <h3>Live Assessment Monitoring</h3>
+                    <p>See real-time anti-cheating technology in action during live coding sessions</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Analytics Dashboard</h3>
+                    <p>Explore comprehensive candidate analytics and performance insights</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Platform Integration</h3>
+                    <p>Learn how RNG Luxe integrates with your existing HR systems</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Security Features</h3>
+                    <p>Understand enterprise-grade security and compliance capabilities</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alternative Contact -->
+    <section class="demo-alternative">
+        <div class="container">
+            <h2>Prefer to Talk First?</h2>
+            <p>Contact our team directly for immediate assistance</p>
+            <div class="contact-options">
+                <div class="contact-option">
+                    <i class="fas fa-phone"></i>
+                    <h3>Call Us</h3>
+                    <p>+1 (555) 123-4567</p>
+                    <span>Mon-Fri, 9AM-6PM PST</span>
+                </div>
+                <div class="contact-option">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email Us</h3>
+                    <p>demo@rngluxe.com</p>
+                    <span>Response within 2 hours</span>
+                </div>
+                <div class="contact-option">
+                    <i class="fas fa-comments"></i>
+                    <h3>Live Chat</h3>
+                    <p>Start a conversation</p>
+                    <span>Available 24/7</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
