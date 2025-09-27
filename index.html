@@ -35,7 +35,7 @@
                         <a href="enterprise.html#vendor">Vendor Profile</a>
                     </div>
                 </div>
-                <a href="book-demo.html" class="nav-link">Book A Demo</a>
+                <a href="support.html#founders" class="nav-link">Our Team</a>
                 <div class="dropdown">
                     <a href="resources.html" class="nav-link">Resources</a>
                     <div class="dropdown-content">
@@ -62,24 +62,22 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-container">
-            <div class="hero-content">
-                <div class="coming-soon-badge">
-                  
-                </div>
-                <h1 class="hero-title">
-                    AI-Powered ATS That<br>
-                    <span class="gradient-text">Screens for You</span>
-                </h1>
-                <p class="hero-description">
-                    RNG Luxe is a complete ATS platform that sends AI-powered assessments to candidates, conducts initial screening, and prevents cheating - all while you focus on hiring the best talent.
-                </p>
-                <div class="hero-buttons">
-                    <button class="btn-primary">Join Waitlist</button>
-                    <a href="support.html#founders" class="btn-secondary">Our Team</a>
-                </div>
-                <div class="scroll-indicator">
-                    <i class="fas fa-chevron-down"></i>
-                </div>
+            <div class="coming-soon-badge">
+              
+            </div>
+            <h1 class="hero-title">
+                AI-Powered ATS That<br>
+                <span class="gradient-text">Screens for You</span>
+            </h1>
+            <p class="hero-description">
+                RNG Luxe is a complete ATS platform that sends AI-powered assessments to candidates, conducts initial screening, and prevents cheating - all while you focus on hiring the best talent.
+            </p>
+            <div class="hero-buttons">
+                <button class="btn-primary">Join Waitlist</button>
+                <a href="support.html#founders" class="btn-secondary">Our Team</a>
+            </div>
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i>
             </div>
         </div>
     </section>
@@ -155,137 +153,297 @@
             <!-- Mac App Interface -->
             <div class="mac-app-content">
                 <div class="mac-sidebar">
+                    <div class="sidebar-header">
+                        <div class="company-logo">
+                            <i class="fas fa-building"></i>
+                            <span>RNG Luxe</span>
+                        </div>
+                    </div>
+                    
                     <div class="sidebar-section">
-                        <h3>Navigation</h3>
-                        <div class="nav-item active">
-                            <div class="nav-icon dashboard"></div>
+                        <div class="nav-item active" data-section="dashboard">
+                            <i class="fas fa-tachometer-alt nav-icon"></i>
                             <span>Dashboard</span>
                         </div>
-                        <div class="nav-item">
-                            <div class="nav-icon candidates"></div>
+                        <div class="nav-item" data-section="candidates">
+                            <i class="fas fa-users nav-icon"></i>
                             <span>Candidates</span>
+                            <span class="nav-badge">247</span>
                         </div>
-                        <div class="nav-item">
-                            <div class="nav-icon assessments"></div>
+                        <div class="nav-item" data-section="jobs">
+                            <i class="fas fa-briefcase nav-icon"></i>
+                            <span>Jobs</span>
+                            <span class="nav-badge">12</span>
+                        </div>
+                        <div class="nav-item" data-section="assessments">
+                            <i class="fas fa-clipboard-check nav-icon"></i>
                             <span>Assessments</span>
+                            <span class="nav-badge">23</span>
                         </div>
-                        <div class="nav-item">
-                            <div class="nav-icon reports"></div>
-                            <span>Reports</span>
+                        <div class="nav-item" data-section="interviews">
+                            <i class="fas fa-video nav-icon"></i>
+                            <span>Interviews</span>
+                            <span class="nav-badge">8</span>
                         </div>
-                        <div class="nav-item">
-                            <div class="nav-icon settings"></div>
+                        <div class="nav-item" data-section="reports">
+                            <i class="fas fa-chart-bar nav-icon"></i>
+                            <span>Analytics</span>
+                        </div>
+                        <div class="nav-item" data-section="settings">
+                            <i class="fas fa-cog nav-icon"></i>
                             <span>Settings</span>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-footer">
+                        <div class="user-profile">
+                            <div class="user-avatar">RU</div>
+                            <div class="user-info">
+                                <div class="user-name">Rojan Upreti</div>
+                                <div class="user-role">Admin</div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="mac-main-content">
                     <div class="content-header">
-                        <h2>Dashboard Overview</h2>
-                        <div class="status-indicators">
-                            <div class="status-dot active"></div>
-                            <span>System Active</span>
-                        </div>
-                    </div>
-
-                    <div class="mac-cards-grid">
-                        <div class="mac-card">
-                            <div class="card-header">
-                                <h3>Total Applicants</h3>
-                                <div class="card-icon candidates"></div>
-                            </div>
-                            <div class="card-content">
-                                <div class="metric">247</div>
-                                <div class="metric-label">This Month</div>
+                        <div class="header-left">
+                            <h2>Dashboard Overview</h2>
+                            <div class="breadcrumb">
+                                <span>Home</span>
+                                <i class="fas fa-chevron-right"></i>
+                                <span>Dashboard</span>
                             </div>
                         </div>
-
-                        <div class="mac-card">
-                            <div class="card-header">
-                                <h3>Qualified Candidates</h3>
-                                <div class="card-icon ai"></div>
+                        <div class="header-right">
+                            <div class="search-box">
+                                <i class="fas fa-search"></i>
+                                <input type="text" placeholder="Search candidates, jobs...">
                             </div>
-                            <div class="card-content">
-                                <div class="metric">68%</div>
-                                <div class="metric-label">AI Match Rate</div>
-                            </div>
-                        </div>
-
-                        <div class="mac-card">
-                            <div class="card-header">
-                                <h3>Active Assessments</h3>
-                                <div class="card-icon assessment"></div>
-                            </div>
-                            <div class="card-content">
-                                <div class="metric">12</div>
-                                <div class="metric-label">In Progress</div>
-                            </div>
-                        </div>
-
-                        <div class="mac-card">
-                            <div class="card-header">
-                                <h3>Completed Today</h3>
-                                <div class="card-icon reports"></div>
-                            </div>
-                            <div class="card-content">
-                                <div class="metric">23</div>
-                                <div class="metric-label">Assessments</div>
+                            <div class="header-actions">
+                                <button class="action-btn">
+                                    <i class="fas fa-bell"></i>
+                                    <span class="notification-badge">3</span>
+                                </button>
+                                <button class="action-btn">
+                                    <i class="fas fa-plus"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
 
-                    <div class="applicants-section">
-                        <h3>Recent Applications</h3>
-                        <div class="applicants-list">
-                            <div class="applicant-card" data-candidate="john-doe">
-                                <div class="applicant-avatar">
-                                    <div class="avatar-circle">JD</div>
+                    <div class="dashboard-content">
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <div class="metric-header">
+                                    <h3>Total Candidates</h3>
+                                    <div class="metric-trend positive">+12%</div>
                                 </div>
-                                <div class="applicant-info">
-                                    <h4>John Doe</h4>
-                                    <p class="applicant-role">Senior Software Engineer</p>
-                                    <div class="ai-match">
-                                        <span class="match-score">92%</span>
-                                        <span class="match-label">AI Match</span>
-                                    </div>
-                                </div>
-                                <div class="applicant-status">
-                                    <span class="status-badge pending">Pending Review</span>
-                                </div>
-                            </div>
-
-                            <div class="applicant-card" data-candidate="sarah-smith">
-                                <div class="applicant-avatar">
-                                    <div class="avatar-circle">SS</div>
-                                </div>
-                                <div class="applicant-info">
-                                    <h4>Sarah Smith</h4>
-                                    <p class="applicant-role">Frontend Developer</p>
-                                    <div class="ai-match">
-                                        <span class="match-score">87%</span>
-                                        <span class="match-label">AI Match</span>
-                                    </div>
-                                </div>
-                                <div class="applicant-status">
-                                    <span class="status-badge assessment">In Assessment</span>
+                                <div class="metric-value">2,847</div>
+                                <div class="metric-chart">
+                                    <div class="chart-bar" style="height: 60%"></div>
+                                    <div class="chart-bar" style="height: 80%"></div>
+                                    <div class="chart-bar" style="height: 45%"></div>
+                                    <div class="chart-bar" style="height: 90%"></div>
+                                    <div class="chart-bar" style="height: 70%"></div>
+                                    <div class="chart-bar" style="height: 85%"></div>
+                                    <div class="chart-bar" style="height: 95%"></div>
                                 </div>
                             </div>
-
-                            <div class="applicant-card" data-candidate="mike-johnson">
-                                <div class="applicant-avatar">
-                                    <div class="avatar-circle">MJ</div>
+                            
+                            <div class="metric-card">
+                                <div class="metric-header">
+                                    <h3>Active Jobs</h3>
+                                    <div class="metric-trend positive">+5%</div>
                                 </div>
-                                <div class="applicant-info">
-                                    <h4>Mike Johnson</h4>
-                                    <p class="applicant-role">Full Stack Developer</p>
-                                    <div class="ai-match">
-                                        <span class="match-score">95%</span>
-                                        <span class="match-label">AI Match</span>
+                                <div class="metric-value">12</div>
+                                <div class="metric-subtitle">8 positions filled</div>
+                            </div>
+                            
+                            <div class="metric-card">
+                                <div class="metric-header">
+                                    <h3>Assessments</h3>
+                                    <div class="metric-trend neutral">0%</div>
+                                </div>
+                                <div class="metric-value">23</div>
+                                <div class="metric-subtitle">In progress</div>
+                            </div>
+                            
+                            <div class="metric-card">
+                                <div class="metric-header">
+                                    <h3>Hire Rate</h3>
+                                    <div class="metric-trend positive">+8%</div>
+                                </div>
+                                <div class="metric-value">68%</div>
+                                <div class="metric-subtitle">This quarter</div>
+                            </div>
+                        </div>
+
+                        <div class="content-grid">
+                            <div class="content-panel">
+                                <div class="panel-header">
+                                    <h3>Recent Applications</h3>
+                                    <div class="panel-actions">
+                                        <button class="btn-filter">Filter</button>
+                                        <button class="btn-export">Export</button>
                                     </div>
                                 </div>
-                                <div class="applicant-status">
-                                    <span class="status-badge completed">Completed</span>
+                                <div class="applicants-table">
+                                    <div class="table-header">
+                                        <div class="col-candidate">Candidate</div>
+                                        <div class="col-position">Position</div>
+                                        <div class="col-match">AI Match</div>
+                                        <div class="col-status">Status</div>
+                                        <div class="col-actions">Actions</div>
+                                    </div>
+                                    <div class="table-row">
+                                        <div class="col-candidate">
+                                            <div class="candidate-info">
+                                                <div class="candidate-avatar">JD</div>
+                                                <div class="candidate-details">
+                                                    <div class="candidate-name">John Doe</div>
+                                                    <div class="candidate-email">john.doe@email.com</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-position">Senior Developer</div>
+                                        <div class="col-match">
+                                            <div class="match-score">92%</div>
+                                        </div>
+                                        <div class="col-status">
+                                            <span class="status-badge pending">Pending</span>
+                                        </div>
+                                        <div class="col-actions">
+                                            <button class="action-btn-small">View</button>
+                                        </div>
+                                    </div>
+                                    <div class="table-row">
+                                        <div class="col-candidate">
+                                            <div class="candidate-info">
+                                                <div class="candidate-avatar">SS</div>
+                                                <div class="candidate-details">
+                                                    <div class="candidate-name">Sarah Smith</div>
+                                                    <div class="candidate-email">sarah.smith@email.com</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-position">Frontend Developer</div>
+                                        <div class="col-match">
+                                            <div class="match-score">87%</div>
+                                        </div>
+                                        <div class="col-status">
+                                            <span class="status-badge assessment">Assessment</span>
+                                        </div>
+                                        <div class="col-actions">
+                                            <button class="action-btn-small">View</button>
+                                        </div>
+                                    </div>
+                                    <div class="table-row">
+                                        <div class="col-candidate">
+                                            <div class="candidate-info">
+                                                <div class="candidate-avatar">MJ</div>
+                                                <div class="candidate-details">
+                                                    <div class="candidate-name">Mike Johnson</div>
+                                                    <div class="candidate-email">mike.johnson@email.com</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-position">Full Stack Developer</div>
+                                        <div class="col-match">
+                                            <div class="match-score">95%</div>
+                                        </div>
+                                        <div class="col-status">
+                                            <span class="status-badge interview">Interview</span>
+                                        </div>
+                                        <div class="col-actions">
+                                            <button class="action-btn-small">View</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="content-panel">
+                                <div class="panel-header">
+                                    <h3>Quick Actions</h3>
+                                </div>
+                                <div class="quick-actions-modular">
+                                    <div class="action-module">
+                                        <div class="action-icon">
+                                            <i class="fas fa-plus"></i>
+                                        </div>
+                                        <div class="action-content">
+                                            <h4>Create Job</h4>
+                                            <p>Post a new position</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="action-module">
+                                        <div class="action-icon">
+                                            <i class="fas fa-clipboard-check"></i>
+                                        </div>
+                                        <div class="action-content">
+                                            <h4>New Assessment</h4>
+                                            <p>Create evaluation test</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="action-module">
+                                        <div class="action-icon">
+                                            <i class="fas fa-user-plus"></i>
+                                        </div>
+                                        <div class="action-content">
+                                            <h4>Invite Candidates</h4>
+                                            <p>Send assessment links</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="action-module">
+                                        <div class="action-icon">
+                                            <i class="fas fa-chart-line"></i>
+                                        </div>
+                                        <div class="action-content">
+                                            <h4>Analytics</h4>
+                                            <p>View performance data</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="stats-module">
+                                    <div class="stats-header">
+                                        <h4>Today's Activity</h4>
+                                    </div>
+                                    <div class="stats-list">
+                                        <div class="stat-item">
+                                            <div class="stat-icon">
+                                                <i class="fas fa-user-check"></i>
+                                            </div>
+                                            <div class="stat-info">
+                                                <span class="stat-label">New Applications</span>
+                                                <span class="stat-value">12</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="stat-item">
+                                            <div class="stat-icon">
+                                                <i class="fas fa-clock"></i>
+                                            </div>
+                                            <div class="stat-info">
+                                                <span class="stat-label">Pending Reviews</span>
+                                                <span class="stat-value">8</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="stat-item">
+                                            <div class="stat-icon">
+                                                <i class="fas fa-check-circle"></i>
+                                            </div>
+                                            <div class="stat-info">
+                                                <span class="stat-label">Completed Today</span>
+                                                <span class="stat-value">5</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -580,7 +738,7 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>We offer a 14-day free trial with full access to all features. After the trial, we have flexible pricing plans starting at $29/month for small teams, with enterprise solutions available for larger organizations. Contact us for custom pricing based on your specific needs.</p>
+                        <p>We're currently in development and accepting early access signups. Join our waitlist to be among the first to experience RNG Luxe when we launch. We'll have flexible pricing plans starting at $29/month for small teams, with enterprise solutions available for larger organizations. Contact us for custom pricing based on your specific needs.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -646,7 +804,7 @@
                         <li><a href="enterprise.html#guides">Enterprise Guides</a></li>
                         <li><a href="enterprise.html#security">Security</a></li>
                         <li><a href="enterprise.html#vendor">Vendor Profile</a></li>
-                        <li><a href="book-demo.html">Book A Demo</a></li>
+                        <li><a href="support.html#founders">Our Team</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
