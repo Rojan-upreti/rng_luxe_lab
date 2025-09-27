@@ -153,6 +153,20 @@ document.head.appendChild(faqStyle);
 // Form validation and submission
 document.addEventListener('DOMContentLoaded', () => {
 
+    // Hero scroll indicator functionality
+    const heroScrollIndicator = document.querySelector('.hero .scroll-indicator');
+    if (heroScrollIndicator) {
+        heroScrollIndicator.addEventListener('click', function() {
+            const nextSection = document.querySelector('.freeze-section');
+            if (nextSection) {
+                nextSection.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    }
+
     // Add click handlers for demo buttons
     document.querySelectorAll('.btn-primary, .btn-secondary, .get-windows-btn').forEach(button => {
         button.addEventListener('click', function(e) {

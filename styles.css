@@ -299,6 +299,33 @@ body {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
+/* Hero Scroll Indicator */
+.hero .scroll-indicator {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.hero .scroll-indicator i {
+    font-size: 1.5rem;
+    color: #86868b;
+    transition: all 0.3s ease;
+}
+
+.hero .scroll-indicator:hover i {
+    color: #007AFF;
+    transform: translateY(3px);
+}
+
+@keyframes bounce {
+    0%, 100% { 
+        transform: translateY(0);
+    }
+    50% { 
+        transform: translateY(-10px);
+    }
+}
 
 /* Freeze Section - Apple Style */
 .freeze-section {
